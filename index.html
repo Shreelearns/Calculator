@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="screen" id="display"></div>
+            <div class="buttons" id="btns">
+                <button id="ac"
+                    style="background-color:black;width:5vw;height:5vw;margin:1vh;color:white;font-size:2vw;border-radius:1vh">AC</button>
+                <button id="cc"
+                    style="background-color:black;width:5vw;height:5vw;margin:1vh;color:white;font-size:2vw;border-radius:1vh">CC</button>
+
+            </div>
+        </div>
+    </div>
+    <script>
+        let btns = document.getElementById('btns');
+        let display = document.getElementById('display');
+        let ac = document.getElementById('ac');
+        let cc = document.getElementById('cc');
+        ac.addEventListener('click', () => {
+            display.innerText = "";
+        });
+        cc.addEventListener('click',()=>{
+            display.innerText=display.innerText.slice(0,-1);
+        })
+
+        const array_calc = ['+', '-', '*', '/', '%', '.'];
+
+        for (let index = 0; index < 10; index++) {
+            let btn = document.createElement('button');
+            btn.innerText = index;
+            btn.style.cssText = 'background-color:black;width:5vw;height:5vw;margin:1vh;color:white;font-size:2vw;border-radius:1vh';
+            btn.addEventListener('click', () => {
+                display.innerText += btn.innerText;
+            })
+            btns.appendChild(btn);
+        }
+        for (let i = 0; i < 6; i++) {
+            let calc = document.createElement('button');
+            calc.innerText = array_calc[i];
+            calc.style.cssText = 'background-color:black;width:5vw;height:5vw;margin:1vh;color:white;font-size:2vw;border-radius:1vh';
+            btns.appendChild(calc);
+            calc.addEventListener('click', () => {
+                display.innerText += calc.innerText;
+            })
+            btns.appendChild(calc);
+        }
+
+        let equal = document.createElement('button');
+        equal.innerText = '=';
+        equal.style.cssText = 'background-color:black;width:11vw;height:5vw;margin:1vh;color:white;font-size:2vw;border-radius:1vh';
+        equal.addEventListener('click', () => {
+            display.innerText = eval(display.innerText);
+        })
+        btns.appendChild(equal);
+
+        let btnvalue = btn.innerText;
+
+
+    </script>
+</body>
+
+</html>

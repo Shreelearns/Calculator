@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 500;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 36vw;
+    height: 70vh;
+    background-color: gray;
+    border-radius: 1vh;
+}
+.screen{
+    width: 96%;
+    height: 15vh;
+    background-color: black;
+    border-radius: 1vh;
+    margin-top: 1.4vh;
+    margin-left: 1.4vh;
+    margin-bottom: 4vh;
+    color: white;
+    font-size: 6vh;
+    padding-top: 3vh;
+}
+.buttons{
+    padding-left: 5vh;
+}
